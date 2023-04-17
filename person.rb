@@ -9,7 +9,7 @@ class Person
   end
 
   def of_age?
-    @age >= 18
+    (@age.is_a? Numeric) && (@age >= 18)
   end
 
   private
@@ -18,7 +18,3 @@ class Person
     @age >= 18 || @parent_permission
   end
 end
-
-p = Person.new('Ander', 11, permission: false)
-puts p.of_age?
-# puts p.can_use_services?
