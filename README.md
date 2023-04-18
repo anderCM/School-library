@@ -76,7 +76,7 @@ Clone this repository to your desired folder:
 
 ```sh
   git clone https://github.com/anderCM/School-library.git
-    cd Decode-morse
+    cd School-library
 ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
