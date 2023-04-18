@@ -43,7 +43,8 @@ class CapitalizeDecorator < Decorator
   end
 end
 
-person = Person.new('Ander')
-
-a = CapitalizeDecorator.new(person)
-puts a.correct_name
+class TrimmerDecorator < Decorator
+  def correct_name
+    @nameable.correct_name.length > 10 ? "#{@nameable.correct_name.strip[0..9]}..." : @nameable.correct_name
+  end
+end
