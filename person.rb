@@ -48,3 +48,10 @@ class TrimmerDecorator < Decorator
     @nameable.correct_name.length > 10 ? "#{@nameable.correct_name.strip[0..9]}..." : @nameable.correct_name
   end
 end
+
+person = Person.new('maximilianus')
+person.correct_name
+capitalizedPerson = CapitalizeDecorator.new(person)
+puts capitalizedPerson.correct_name
+capitalizedTrimmedPerson = TrimmerDecorator.new(capitalizedPerson)
+puts capitalizedTrimmedPerson.correct_name
