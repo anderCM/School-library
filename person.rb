@@ -1,4 +1,7 @@
 require_relative 'nameable'
+require_relative './decorators/capitalize'
+require_relative './decorators/trim'
+
 class Person < Nameable
   attr_reader :id
   attr_accessor :name, :age
@@ -23,29 +26,6 @@ class Person < Nameable
 
   def can_use_services?
     @age >= 18 || @parent_permission
-  end
-end
-
-class Decorator < Nameable
-  def initialize(nameable)
-    super()
-    @nameable = nameable
-  end
-
-  def correct_name
-    @nameable.correct_name
-  end
-end
-
-class CapitalizeDecorator < Decorator
-  def correct_name
-    @nameable.correct_name.upcase
-  end
-end
-
-class TrimmerDecorator < Decorator
-  def correct_name
-    @nameable.correct_name.length > 10 ? "#{@nameable.correct_name.strip[0..9]}..." : @nameable.correct_name
   end
 end
 
