@@ -32,8 +32,7 @@ student1.add_to_classroom(classroom1)
 student2.add_to_classroom(classroom2)
 student3.add_to_classroom(classroom2)
 
-[ classroom1, classroom2 ].each do |classroom|
+[classroom1, classroom2].each do |classroom|
   puts "#{classroom.label} students:"
   classroom.read_students.each { |student| puts "- #{student.name}" }
 end
-
