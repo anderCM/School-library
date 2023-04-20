@@ -1,10 +1,12 @@
 require_relative 'nameable'
 require_relative './decorators/capitalize'
 require_relative './decorators/trim'
+require_relative 'book'
+require_relative 'rental'
 
 class Person < Nameable
   attr_reader :id
-  attr_accessor :name, :age
+  attr_accessor :name, :age, :rentals
 
   def initialize(name, age = 'Unknown', permission: true)
     super()
@@ -12,6 +14,7 @@ class Person < Nameable
     @name = name
     @age = age
     @parent_permission = permission
+    @rentals = []
   end
 
   def of_age?
@@ -22,6 +25,10 @@ class Person < Nameable
     @name
   end
 
+  def add_rental(book, date)
+    Rental.new(date, self, book)
+  end
+
   private
 
   def can_use_services?
@@ -29,9 +36,11 @@ class Person < Nameable
   end
 end
 
-person = Person.new('maximilianus')
-person.correct_name
-capitalized_person = CapitalizeDecorator.new(person)
-puts capitalized_person.correct_name
-capitalized_trimmed_person = TrimmerDecorator.new(capitalized_person)
-puts capitalized_trimmed_person.correct_name
+person = Person.new('Juan')
+book = Book.new('Los Miserables', 'Victor Hugo')
+rental = book.add_rental(person, '2023-04-20')
+# rental = person.add_rental(book, '2023-04-20') # Extra way to add rental using person instead book
+
+puts "Rental date: #{rental.date}"
+puts "Rental person name: #{rental.person.name}"
+puts "Rental book title: #{rental.book.title}"
