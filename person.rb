@@ -1,6 +1,8 @@
 require_relative 'nameable'
 require_relative './decorators/capitalize'
 require_relative './decorators/trim'
+require_relative 'book'
+require_relative 'rental'
 
 class Person < Nameable
   attr_reader :id
@@ -34,3 +36,12 @@ class Person < Nameable
     @age >= 18 || @parent_permission
   end
 end
+
+person = Person.new('Juan')
+book = Book.new('Los Miserables', 'Victor Hugo')
+rental = Rental.new('2023-04-20', person, book)
+
+
+puts "Rental date: #{rental.date}"
+puts "Rental person name: #{rental.person.name}"
+puts "Rental book title: #{rental.book.title}"
