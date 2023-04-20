@@ -41,7 +41,6 @@ person = Person.new('Juan')
 book = Book.new('Los Miserables', 'Victor Hugo')
 rental = Rental.new('2023-04-20', person, book)
 
-
 puts "Rental date: #{rental.date}"
 puts "Rental person name: #{rental.person.name}"
 puts "Rental book title: #{rental.book.title}"
