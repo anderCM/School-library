@@ -5,7 +5,7 @@ require_relative 'book'
 require_relative 'rental'
 
 class Person < Nameable
-  attr_reader :id
+  attr_reader :id, :rentals
   attr_accessor :name, :age
 
   def initialize(name, age = 'Unknown', permission: true)
@@ -25,9 +25,8 @@ class Person < Nameable
     @name
   end
 
-  def add_rental(rental)
-    @rentals << rental
-    rental.person = self
+  def add_rental(book, date)
+    Rental.new(date, self, book)
   end
 
   private
@@ -39,7 +38,8 @@ end
 
 person = Person.new('Juan')
 book = Book.new('Los Miserables', 'Victor Hugo')
-rental = Rental.new('2023-04-20', person, book)
+rental = book.add_rental(person, '2023-04-20')
+# rental = person.add_rental(book, '2023-04-20') # Extra way to add rental using person instead book
 
 puts "Rental date: #{rental.date}"
 puts "Rental person name: #{rental.person.name}"
