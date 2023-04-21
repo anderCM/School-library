@@ -11,8 +11,4 @@ class Classroom
     @students << student
     student.classroom = self
   end
-
-  def read_students
-    @students
-  end
 end

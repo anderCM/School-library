@@ -35,12 +35,3 @@ class Person < Nameable
     @age >= 18 || @parent_permission
   end
 end
-
-person = Person.new('Juan')
-book = Book.new('Los Miserables', 'Victor Hugo')
-rental = book.add_rental(person, '2023-04-20')
-# rental = person.add_rental(book, '2023-04-20') # Extra way to add rental using person instead book
-
-puts "Rental date: #{rental.date}"
-puts "Rental person name: #{rental.person.name}"
-puts "Rental book title: #{rental.book.title}"
