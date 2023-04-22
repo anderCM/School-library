@@ -12,9 +12,9 @@ class Rental
     @id = Random.rand(1...1000)
     @date = date
     @person = person
-    person.rentals << self
+    person[:rentals] << self
     @book = book
-    book.rentals << self
+    book[:rentals] << self
   end
 
   def add_book(book)

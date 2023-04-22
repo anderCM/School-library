@@ -55,8 +55,8 @@ module SaveData
       data_rental = {
         id: rental.id,
         date: rental.date,
-        id_book: rental.book.id,
-        id_person: rental.person.id
+        id_book: rental.book[:id],
+        id_person: rental.person[:id]
       }
       data_rental
     end

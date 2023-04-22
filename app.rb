@@ -28,7 +28,6 @@ class App
   end
 
   def list_people
-    puts @people
     if @people.empty?
       puts('No people yet')
     else
@@ -111,19 +110,19 @@ class App
     puts 'Select a book from the following list by number'
     list_books
     selected_book = gets.chomp.to_i
-    book_data = @books[selected_book]
-    book = Book.new(book_data['title'], book_data['author'])
+    book_data = @books[selected_book].to_h.transform_keys(&:to_sym)
+    book_data[:rentals] = []
 
     puts 'Select a person from the following list by number'
     list_people
     selected_person = gets.chomp.to_i
-    person_data = @people[selected_person]
-    person = Person.new(person_data['name'], person_data['age'], permission: person_data['permission'])
+    person_data = @people[selected_person].to_h.transform_keys(&:to_sym)
+    person_data[:rentals] = []
 
     print 'Date (YYYY/MM/DD): '
     date = gets.chomp
 
-    rental = Rental.new(date, person, book)
+    rental = Rental.new(date, person_data, book_data)
     save_rentals([rental])
     @rentals = load_rentals
     puts 'Rental created succesfully!'
