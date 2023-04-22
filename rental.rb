@@ -1,13 +1,11 @@
 require 'json'
-require_relative 'modules/save_data'
 
+require_relative 'modules/save_data'
 require_relative 'person'
 require_relative 'book'
-require_relative 'student'
-require_relative 'teacher'
 
 class Rental
-  attr_reader :id
+  attr_reader :id, :rentals
   attr_accessor :date, :person, :book
 
   def initialize(date, person, book)

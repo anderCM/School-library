@@ -5,8 +5,12 @@ module GetData
     read_file('books') || []
   end
 
-  def load_peopls
+  def load_people
     read_file('people') || []
+  end
+
+  def load_rentals
+    read_file('rentals') || []
   end
 
   def get_rentals(id)

@@ -55,15 +55,9 @@ module SaveData
       data_rental = {
         id: rental.id,
         date: rental.date,
-        id_book: rental.book.id, title_book: rental.book.title, author_book: rental.book.author,
-        id_person: rental.person.id, name_person: rental.person.name, role_person: rental.person.role,
-        age_person: rental.person.age
+        id_book: rental.book.id,
+        id_person: rental.person.id
       }
-      if rental.person.role == 'Teacher'
-        data_rental[:specialization] = rental.person.specialization
-      elsif rental.person.role == 'Student'
-        data_rental[:classroom] = rental.person.classroom
-      end
       data_rental
     end
     all_data = existing_data + new_data
