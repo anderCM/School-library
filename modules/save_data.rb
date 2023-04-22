@@ -20,7 +20,7 @@ module SaveData
 
   def save_books(books)
     existing_data = read_file('books')
-    new_data = books.map { |book| { title: book.title, author: book.author } }
+    new_data = books.map { |book| { id: book.id, title: book.title, author: book.author } }
     all_data = existing_data + new_data
 
     return if all_data.empty?

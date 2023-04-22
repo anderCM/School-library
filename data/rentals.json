@@ -22,5 +22,77 @@
     "role_person": "Teacher",
     "age_person": 56,
     "specialization": "Math"
+  },
+  {
+    "id": 288,
+    "date": "2023-04-21",
+    "id_book": 776,
+    "title_book": "Movie Dick :v",
+    "author_book": "El dick",
+    "id_person": 587,
+    "name_person": "Anderson",
+    "role_person": "Student",
+    "age_person": 22,
+    "classroom": "C-220"
+  },
+  {
+    "id": 338,
+    "date": "2022-03-29",
+    "id_book": 866,
+    "title_book": "Movie Dick 2 :v",
+    "author_book": "El dick 2",
+    "id_person": 768,
+    "name_person": "Sophie",
+    "role_person": "Teacher",
+    "age_person": 56,
+    "specialization": "Math"
+  },
+  {
+    "id": 796,
+    "date": "2023-04-21",
+    "id_book": 79,
+    "title_book": "Movie Dick :v",
+    "author_book": "El dick",
+    "id_person": 229,
+    "name_person": "Anderson232",
+    "role_person": "Student",
+    "age_person": 22,
+    "classroom": "C-112"
+  },
+  {
+    "id": 684,
+    "date": "2022-03-29",
+    "id_book": 355,
+    "title_book": "Movie Dick 2 :v",
+    "author_book": "El dick 2",
+    "id_person": 819,
+    "name_person": "Sophie",
+    "role_person": "Teacher",
+    "age_person": 56,
+    "specialization": "Math"
+  },
+  {
+    "id": 947,
+    "date": "2023-04-21",
+    "id_book": 741,
+    "title_book": "Movie Dick :v",
+    "author_book": "El dick",
+    "id_person": 962,
+    "name_person": "Anderson232",
+    "role_person": "Student",
+    "age_person": 22,
+    "classroom": "C-112"
+  },
+  {
+    "id": 483,
+    "date": "2022-03-29",
+    "id_book": 600,
+    "title_book": "Movie Dick 2 :v",
+    "author_book": "El dick 2",
+    "id_person": 871,
+    "name_person": "Sophie",
+    "role_person": "Teacher",
+    "age_person": 56,
+    "specialization": "Math"
   }
 ]
