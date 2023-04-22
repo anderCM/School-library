@@ -28,6 +28,7 @@ class App
   end
 
   def list_people
+    puts @people
     if @people.empty?
       puts('No people yet')
     else
@@ -46,6 +47,7 @@ class App
 
     book = Book.new(title, author)
     save_books([book])
+    @books = load_books
     puts 'Book created successfully!'
   end
 
@@ -86,6 +88,7 @@ class App
 
     student = Student.new(name, classroom, parent_permission, age)
     save_people([student])
+    @people = load_people
     puts 'Student created succesfully!'
   end
 
@@ -100,6 +103,7 @@ class App
 
     teacher = Teacher.new(name, specialization, age)
     save_people([teacher])
+    @people = load_people
     puts 'Teacher created succesfully!'
   end
 
@@ -121,6 +125,7 @@ class App
 
     rental = Rental.new(date, person, book)
     save_rentals([rental])
+    @rentals = load_rentals
     puts 'Rental created succesfully!'
   end
 
