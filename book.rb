@@ -1,4 +1,7 @@
+require 'json'
+require_relative 'modules/save_data'
 class Book
+  attr_reader :id
   attr_accessor :title, :author, :rentals
 
   def initialize(title, author)

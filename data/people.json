@@ -1,0 +1,26 @@
+[
+  {
+    "id": 446,
+    "date": "2023-04-21",
+    "id_book": 510,
+    "title_book": "Movie Dick :v",
+    "author_book": "El dick",
+    "id_person": 437,
+    "name_person": "Anderson",
+    "role_person": "Student",
+    "age_person": 22,
+    "classroom": "C-220"
+  },
+  {
+    "id": 467,
+    "date": "2022-03-29",
+    "id_book": 110,
+    "title_book": "Movie Dick 2 :v",
+    "author_book": "El dick 2",
+    "id_person": 610,
+    "name_person": "Sophie",
+    "role_person": "Teacher",
+    "age_person": 56,
+    "specialization": "Math"
+  }
+]
