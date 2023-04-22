@@ -1,14 +1,16 @@
 require_relative 'person'
+require_relative 'modules/save_data'
+
 class Teacher < Person
-  def initialize(name, specialization, age = 'Unknown', permission: true)
+  attr_accessor :specialization, :role
+
+  def initialize(name, specialization, age = 'Unknown', permission: true, role: 'Teacher')
     super(name, age, permission: permission)
     @specialization = specialization
+    @role = role
   end
 
   def can_use_services?
     true
   end
 end
-
-teacher1 = Teacher.new('Anderson', 'Math')
-puts teacher1.can_use_services?

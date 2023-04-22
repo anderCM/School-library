@@ -5,15 +5,15 @@ require_relative 'book'
 require_relative 'rental'
 
 class Person < Nameable
-  attr_reader :id
+  attr_reader :id, :permission
   attr_accessor :name, :age, :rentals
 
-  def initialize(name, age = 'Unknown', permission: true)
+  def initialize(name, age = 'Unknown', id = Random.rand(1...1000), permission: true)
     super()
-    @id = Random.rand(1...1000)
+    @id = id
     @name = name
     @age = age
-    @parent_permission = permission
+    @permission = permission
     @rentals = []
   end
 
@@ -32,15 +32,6 @@ class Person < Nameable
   private
 
   def can_use_services?
-    @age >= 18 || @parent_permission
+    @age >= 18 || @permission
   end
 end
-
-person = Person.new('Juan')
-book = Book.new('Los Miserables', 'Victor Hugo')
-rental = book.add_rental(person, '2023-04-20')
-# rental = person.add_rental(book, '2023-04-20') # Extra way to add rental using person instead book
-
-puts "Rental date: #{rental.date}"
-puts "Rental person name: #{rental.person.name}"
-puts "Rental book title: #{rental.book.title}"
