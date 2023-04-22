@@ -2,7 +2,7 @@ require_relative 'nameable'
 require_relative './decorators/capitalize'
 require_relative './decorators/trim'
 require_relative 'book'
-# require_relative 'rental'
+require_relative 'rental'
 
 class Person < Nameable
   attr_reader :id, :permission

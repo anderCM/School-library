@@ -1,11 +1,11 @@
 require_relative 'save_data'
 module GetData
   include SaveData
-  def get_books
+  def load_books
     read_file('books') || []
   end
 
-  def get_people
+  def load_peopls
     read_file('people') || []
   end
 
