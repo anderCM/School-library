@@ -20,7 +20,7 @@ module SaveData
 
   def save_books(books)
     existing_data = read_file('books')
-    new_data = books.map { |book| { title: book.title, author: book.author} }
+    new_data = books.map { |book| { title: book.title, author: book.author } }
     all_data = existing_data + new_data
 
     return if all_data.empty?
@@ -32,7 +32,7 @@ module SaveData
     existing_data = read_file('people')
     new_data = people.map do |person|
       data_person = { id: person.id, name: person.name, age: person.age, role: person.role }
-      
+
       if person.role == 'Teacher'
         data_person[:specialization] = person.specialization
       elsif person.role == 'Student'
@@ -55,12 +55,8 @@ module SaveData
       data_rental = {
         id: rental.id,
         date: rental.date,
-        id_book: rental.book.id,
-        title_book: rental.book.title,
-        author_book: rental.book.author,
-        id_person: rental.person.id,
-        name_person: rental.person.name,
-        role_person: rental.person.role,
+        id_book: rental.book.id, title_book: rental.book.title, author_book: rental.book.author,
+        id_person: rental.person.id, name_person: rental.person.name, role_person: rental.person.role,
         age_person: rental.person.age
       }
       if rental.person.role == 'Teacher'
@@ -75,11 +71,4 @@ module SaveData
 
     write_file('rentals', all_data)
   end
-
-
-
-
-
-
-
 end

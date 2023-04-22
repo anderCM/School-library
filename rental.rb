@@ -7,6 +7,8 @@ require_relative 'student'
 require_relative 'teacher'
 
 class Rental
+  include SaveData
+
   attr_reader :id
   attr_accessor :date, :person, :book
 
@@ -28,7 +30,6 @@ class Rental
   end
 end
 
-include SaveData
 student = Student.new('Anderson', 'Student', 'C-220', 22)
 
 teacher = Teacher.new('Sophie', 'Teacher', 'Math', 56)
